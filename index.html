@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulte o(s) CEP(s)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <form action="get">
+      <div class="campo">
+        <!-- CEP -->
+        <label for="cep">Informe o CEP: </label>
+        <input type="text" name="cep" id="cep">
+      </div>
+
+      <div class="campo-junto">
+        <div class="campo">
+          <!-- UF -->
+          <label for="uf">UF: </label>
+          <input type="text" name="uf" id="uf">
+        </div>
+
+        <div class="campo">
+          <!-- ESTADO -->
+          <label for="estado">Estado: </label>
+          <input type="text" name="estado" id="estado">
+        </div>
+      </div>
+
+      <div class="campo">
+        <!-- LOCALIDADE -->
+        <label for="localidade">Localidade: </label>
+        <input type="text" name="localidade" id="localidade">
+      </div>
+
+      <button type="submit" id="btn">Enviar</button>
+    </form>
+  </main>
+  <script src="/index.js"></script>
+</body>
+</html>
