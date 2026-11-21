@@ -1,4 +1,5 @@
 * {
+  overflow-x: hidden;
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
@@ -6,14 +7,25 @@
 }
 
 main {
+  width: 100vw;
   height: 100vh;
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section{
+  padding: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 form {
-  width: 500px;
+  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -24,23 +36,30 @@ button {
   border: none;
   padding: 10px;
   border-radius: 20px;
-  color: #e1e1e1;
+  color: #ffff;
   font-weight: bold;
   font-size: 1rem;
 }
 button:hover {
   background-color: #994ae3cc;
-  color: #ffffff;
   cursor: pointer;
 }
 
-label{
+label {
   font-weight: bold;
 }
-input#cep{
+input#cep {
   font-size: 1rem;
 }
 
+.left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
 
 input {
   width: 100%;
@@ -55,7 +74,20 @@ input:focus {
 }
 
 div.campo-junto {
+  width: 100%;
   display: flex;
   flex-direction: row;
   gap: 20px;
+  justify-content: center;
+}
+
+.divPessoa{
+  display: flex;
+  flex-direction: column;
+}
+
+.edit{
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
 }

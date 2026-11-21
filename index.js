@@ -1,7 +1,15 @@
+const pessoa = []
+
+const sectionPessoas = document.getElementById('sectionPessoas')
+const nome = document.getElementById('nome').value
+const email = document.getElementById('email').value
+const dataNasc = document.getElementById('dataNasc').value
+const cpf = document.getElementById('cpf').value
+const form = document.querySelector('form')
+
 const preencherFormulario = (endereco) => {
-  document.getElementById('uf').value = endereco.uf;
   document.getElementById('estado').value = endereco.estado;
-  document.getElementById('localidade').value = endereco.localidade;
+  document.getElementById('cidade').value = endereco.localidade;
 }
 
 
@@ -25,17 +33,38 @@ const pesquisaCep = async () => {
 document.getElementById('cep').addEventListener('focusout', pesquisaCep);
 
 
-const btn = document.getElementById('btn');
-btn.addEventListener('click', (event) => {
+// const btn = document.getElementById('btn');
+form.addEventListener('submit', (event) => {
   event.preventDefault();
 
   if (
-    document.getElementById('uf').value === '' ||
     document.getElementById('estado').value === '' ||
-    document.getElementById('localidade').value === ''
+    document.getElementById('cidade').value === ''
   ) {
     alert('Preencha o formulário corretamente!');
-  } else (
+    return
+  } else {
     alert('Formulário preenchido com sucesso!')
-  )
+    const dadosForm = new FormData(form)
+    const novoObjeto = Object.fromEntries(dadosForm.entries())
+    pessoa.push(novoObjeto)
+    form.reset()
+
+    console.log(pessoa)
+  }
 })
+
+const renderPessoas = (pessoasList) => {
+  const div = document.createElement('div')
+  div.className = 'divPessoa'
+  div.innerHTML = `
+      <h3>${pessoasList.nome}</h3>
+      <div class="edit">
+        <p><em>${pessoasList.dataNasc}</em></p>
+      </div>
+      <div class="edit">
+        <p>${pessoasList.cidade}, <strong>${pessoasList.estado}</strong> </p>
+      </div>
+      `
+  sectionPessoas.appendChild(div)
+}

@@ -1,43 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Consulte o(s) CEP(s)</title>
+  <title>Cadastro</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <main>
-    <form action="get">
+    <div class="left">
+      <h1 style="text-align: left;">Cadastro Comum</h1>
+    </div>
+    <form action="">
+
       <div class="campo">
-        <!-- CEP -->
-        <label for="cep">Informe o CEP: </label>
-        <input type="text" name="cep" id="cep">
+        <!-- NOME -->
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required>
+      </div>
+
+      <div class="campo">
+        <!-- EMAIL -->
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" required>
       </div>
 
       <div class="campo-junto">
         <div class="campo">
-          <!-- UF -->
-          <label for="uf">UF: </label>
-          <input type="text" name="uf" id="uf">
+          <label for="dataNasc">Data de Nascimento:</label>
+          <input type="date" name="dataNasc" id="dataNasc" required>
         </div>
-
         <div class="campo">
-          <!-- ESTADO -->
-          <label for="estado">Estado: </label>
-          <input type="text" name="estado" id="estado">
+          <label for="cpf">CPF:</label>
+          <input type="text" name="cpf" id="cpf" maxlength="11" minlength="11" required>
         </div>
       </div>
 
       <div class="campo">
-        <!-- LOCALIDADE -->
-        <label for="localidade">Localidade: </label>
-        <input type="text" name="localidade" id="localidade">
+        <!-- CEP -->
+        <label for="cep">CEP: </label>
+        <input type="text" name="cep" id="cep" maxlength="8" minlength="8" required>
       </div>
+
+      <div class="campo-junto">
+      <div class="campo">
+        <!-- CIDADE -->
+        <label for="cidade">Cidade: </label>
+        <input type="text" name="cidade" id="cidade" required>
+      </div>
+
+        <div class="campo">
+          <!-- ESTADO -->
+          <label for="estado">Estado: </label>
+          <input type="text" name="estado" id="estado" required>
+        </div>
+      </div>
+
 
       <button type="submit" id="btn">Enviar</button>
     </form>
   </main>
+
+  <section id="sectionPessoas">
+  </section>
+  </div>
   <script src="/index.js"></script>
 </body>
+
 </html>
